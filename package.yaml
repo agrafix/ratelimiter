@@ -1,0 +1,37 @@
+name:                ratelimiter
+version:             0.1.0
+github:              "agrafix/ratelimiter"
+license:             BSD3
+author:              "Alexander Thiemann <mail@thiemann.at>"
+maintainer:          "Alexander Thiemann <mail@thiemann.at>"
+copyright:           "2020 Alexander Thiemann <mail@thiemann.at>"
+
+extra-source-files:
+  - README.md
+
+synopsis:            In-memory rate limiter
+category:            Web
+description:         An in-memory rate limiter implementation
+
+dependencies:
+  - base >= 4.7 && < 5
+  - mtl
+  - time
+  - timespan
+  - containers
+  - vector
+  - extra
+
+library:
+  source-dirs: src
+
+tests:
+  ratelimiter-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ratelimiter
