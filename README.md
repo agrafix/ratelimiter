@@ -13,7 +13,7 @@ main =
   -- one rate limiter can have multiple rules
   do limiter <- 
         newRateLimiter $ V.fromList
-        [ RateLimitConfig (RollingWindow 60) 200 -- 200 per second
+        [ RateLimitConfig (RollingWindow 60) 200 -- 200 per minute
         , RateLimitConfig (RollingWindow 3600) 400 -- 400 per hour
         ]
      let myRateLimitedFunction =
